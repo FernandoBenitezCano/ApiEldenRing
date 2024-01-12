@@ -1,4 +1,5 @@
 @font-face {
+<<<<<<< Updated upstream
     font-family: elden;
     src: url(../font/eldenRing.otf);
   }
@@ -13,6 +14,70 @@
     width: 100%;
     overflow-x: hidden;
   }
+=======
+  font-family: elden;
+  src: url(../font/eldenRing.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+main {
+  height: 81.4vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer,
+header {
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: "elden";
+  color: #d6a448;
+}
+
+.contenido-mostrar,
+main {
+  height: 81.4vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenido-mostrar {
+  width: 101%;
+  overflow-y: scroll;
+}
+
+footer {
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+
+.hide {
+  display: none;
+}
+>>>>>>> Stashed changes
 
   main {
     height: 81.4vh;
