@@ -1,4 +1,4 @@
-// Asegúrate de incluir la librería jQuery y Chart.js en tu proyecto.
+
 
 getBosses();
 
