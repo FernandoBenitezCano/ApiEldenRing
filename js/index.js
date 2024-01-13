@@ -1,16 +1,9 @@
-// Asegúrate de incluir la librería jQuery y Chart.js en tu proyecto.
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  getClasses();
-=======
-=======
->>>>>>> Stashed changes
+
 getClasses();
 
 async function getClasses() {
     try {
->>>>>>> Stashed changes
       const apiUrl = `https://eldenring.fanapis.com/api/classes`;
       const response = await fetch(apiUrl);
       const classesData = await response.json();
