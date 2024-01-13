@@ -1,8 +1,11 @@
 // Asegúrate de incluir la librería jQuery y Chart.js en tu proyecto.
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   getClasses();
 =======
+=======
+>>>>>>> Stashed changes
 getClasses();
 
 async function getClasses() {
@@ -109,7 +112,11 @@ function createBarChart(stats) {
       scales: {
         y: {
           beginAtZero: true,
+<<<<<<< Updated upstream
           max: Math.max(...data) + 5
+=======
+          max: Math.max(...data) + 2
+>>>>>>> Stashed changes
         }
       }
     }
