@@ -46,7 +46,7 @@ async function getClasses() {
 function openModal(character) {
   // Crear el contenido de la ventana modal con estadísticas y gráfico de barras
   const modalContent = `
-    <div class="modal-dialog modal-dialog-centered modal-md"> <!-- Cambiado a modal-md -->
+    <div class="modal-dialog modal-dialog-centered modal-md" style="height:50%">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">${character.name}</h5>
@@ -54,7 +54,7 @@ function openModal(character) {
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body text-center">
+        <div class="modal-body text-center" >
           <img src="${character.image}" alt="${character.name}" class="img-fluid mb-3" style="height: 260px;">
           <h6 class="mb-3">${character.description}</h6>
           <canvas id="barChart" width="50" height="50"></canvas> <!-- Cambiado el tamaño del canvas -->
