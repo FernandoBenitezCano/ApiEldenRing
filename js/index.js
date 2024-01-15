@@ -105,10 +105,14 @@ function createRadarChart(stats) {
       scales: {
         r: {
           beginAtZero: true,
-          max: Math.max(...data) + 2
+          max: Math.max(...data)+4,
+          ticks: {
+            stepSize: 2
+          }
         }
       }
     }
   });
 }
+
 
