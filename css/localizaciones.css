@@ -1,0 +1,12 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+.barraModal {
+    width: 4px;
+    background-color: gray;
+}
+
+.imgReg {
+    object-fit: contain !important;
+    width: auto;
+    height: auto;
+}
