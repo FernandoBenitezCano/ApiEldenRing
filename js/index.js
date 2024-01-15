@@ -80,17 +80,17 @@ function openModal(character) {
   });
 
   // Crear el gráfico de barras
-  createBarChart(character.stats);
+  createRadarChart(character.stats);
 }
 
-function createBarChart(stats) {
+function createRadarChart(stats) {
   const labels = Object.keys(stats);
   const data = Object.values(stats);
 
   const ctx = document.getElementById('barChart').getContext('2d');
 
   new Chart(ctx, {
-    type: 'bar',
+    type: 'radar',
     data: {
       labels: labels,
       datasets: [{
@@ -103,7 +103,7 @@ function createBarChart(stats) {
     },
     options: {
       scales: {
-        y: {
+        r: {
           beginAtZero: true,
           max: Math.max(...data) + 2
         }
@@ -111,3 +111,4 @@ function createBarChart(stats) {
     }
   });
 }
+
