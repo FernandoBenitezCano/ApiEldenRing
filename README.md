@@ -20,6 +20,6 @@ Este proyecto es una aplicación que realiza llamadas a una API de Elden Ring, u
 
 - **Jefes:** Realizado por Alejandro Reina Custodio.
 
-- **Criaturas:** Realizado por Alexis Cortés Quirón.
+- **Criaturas:** Realizado por Alexis Cortés Quirós.
 
 - **Localizaciones:** Realizado por Miguel Ángel Villarín Núñez.
