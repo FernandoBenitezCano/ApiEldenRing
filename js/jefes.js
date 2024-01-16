@@ -10,7 +10,6 @@ async function getBosses() {
 
     const divContainer = document.querySelector('main');
     const seenNames = new Set();
-    let isFirstAlectoAdded = false;
 
     if (response.ok) {
       bossesData.data.forEach(boss => {
@@ -18,17 +17,17 @@ async function getBosses() {
         if (boss.image && !seenNames.has(boss.name)) {
           seenNames.add(boss.name);
 
-          if (!isFirstAlectoAdded && boss.name === 'Alecto, Black Knife Ringleader') {
-            isFirstAlectoAdded = true;
-            return; // Saltar la primera aparición de Alecto
-          }
-
           let bossDiv = document.createElement('div');
           bossDiv.classList.add('col-12', 'col-sm-6', 'col-md-4', 'col-lg-3', 'col-xl-2',
             'card', 'mt-1', 'mb-1', 'mx-1', 'charactere');
 
           // Agregar evento de clic para abrir la ventana modal
           bossDiv.addEventListener('click', () => openModal(boss));
+          bossDiv.addEventListener('mouseover', function() {
+            // Cambia el cursor a 'pointer' cuando se pasa el ratón sobre la carta
+            this.style.cursor = 'pointer';
+        });
+          
 
           let image = document.createElement('img');
           image.classList.add('card-img-top', 'img-fluid', 'img-charactere', 'rounded', 'mt-4');
