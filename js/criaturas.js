@@ -27,6 +27,10 @@ async function getcreaturees() {
 
           // Agregar evento de clic para abrir la ventana modal
           creatureDiv.addEventListener('click', () => openModal(creature));
+          creatureDiv.addEventListener('mouseover', function() {
+            // Cambia el cursor a 'pointer' cuando se pasa el ratón sobre la carta
+            this.style.cursor = 'pointer';
+        });
 
           let image = document.createElement('img');
           image.classList.add('card-img-top', 'img-fluid', 'img-charactere', 'rounded', 'mt-4');

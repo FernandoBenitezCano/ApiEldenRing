@@ -16,9 +16,16 @@ async function getClasses() {
           classDiv.classList.add('col-12', 'col-sm-6', 'col-md-4', 'col-lg-3', 'col-xl-2',
             'card', 'mt-1', 'mb-1', 'mx-1', 'col-2', 'charactere');
   
+          
           // Agregar evento de clic para abrir la ventana modal
           classDiv.addEventListener('click', () => openModal(character));
-  
+          classDiv.addEventListener('mouseover', function() {
+            // Cambia el cursor a 'pointer' cuando se pasa el ratón sobre la carta
+            this.style.cursor = 'pointer';
+        });
+
+          
+
           let image = document.createElement('img');
           image.classList.add('card-img-top', 'img-fluid', 'img-charactere', 'pt-2', 'rounded');
           image.src = character.image;

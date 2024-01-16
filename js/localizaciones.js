@@ -39,6 +39,10 @@ function createLocationCard(location) {
   const locationDiv = document.createElement('div');
   locationDiv.classList.add('col-12', 'col-sm-6', 'col-md-4', 'col-lg-3', 'col-xl-2', 'card', 'mt-1', 'mb-1', 'mx-1', 'charactere');
   locationDiv.addEventListener('click', () => openModal(location));
+  locationDiv.addEventListener('mouseover', function () {
+    // Cambia el cursor a 'pointer' cuando se pasa el ratón sobre la carta
+    this.style.cursor = 'pointer';
+  });
 
   const image = document.createElement('img');
   image.classList.add('card-img-top', 'img-fluid', 'img-charactere', 'rounded', 'mt-4');
