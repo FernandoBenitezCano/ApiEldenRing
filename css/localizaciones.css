@@ -6,7 +6,10 @@
 }
 
 .imgReg {
-    object-fit: contain !important;
-    width: auto;
-    height: auto;
+    max-width: 49% !important;
+    height: fit-content;
+}
+
+.pointCard{
+    cursor: pointer;
 }
