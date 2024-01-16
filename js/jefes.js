@@ -1,5 +1,3 @@
-
-
 getBosses();
 
 async function getBosses() {
@@ -10,31 +8,30 @@ async function getBosses() {
 
     const divContainer = document.querySelector('main');
     const seenNames = new Set();
+    let isFirstAlectoAdded = false;
 
     if (response.ok) {
       bossesData.data.forEach(boss => {
-        // Verificar si el boss tiene una imagen y no tiene el mismo nombre antes de crear la carta
+
         if (boss.image && !seenNames.has(boss.name)) {
           seenNames.add(boss.name);
+
+          if (!isFirstAlectoAdded && boss.name === 'Alecto, Black Knife Ringleader') {
+            isFirstAlectoAdded = true;
+            return; 
+          }
 
           let bossDiv = document.createElement('div');
           bossDiv.classList.add('col-12', 'col-sm-6', 'col-md-4', 'col-lg-3', 'col-xl-2',
             'card', 'mt-1', 'mb-1', 'mx-1', 'charactere');
 
-          // Agregar evento de clic para abrir la ventana modal
           bossDiv.addEventListener('click', () => openModal(boss));
-          bossDiv.addEventListener('mouseover', function() {
-            // Cambia el cursor a 'pointer' cuando se pasa el ratón sobre la carta
-            this.style.cursor = 'pointer';
-        });
-          
 
           let image = document.createElement('img');
           image.classList.add('card-img-top', 'img-fluid', 'img-charactere', 'rounded', 'mt-4');
 
-          // Establecer un tamaño específico para las imágenes
           image.style.width = '100%';
-          image.style.height = '150px'; // Puedes ajustar la altura según tus necesidades
+          image.style.height = '150px'; 
           image.src = boss.image;
 
           let cardBody = document.createElement('div');
@@ -48,12 +45,10 @@ async function getBosses() {
           bossDiv.appendChild(image);
           bossDiv.appendChild(cardBody);
 
-          // Agregar un espacio para mostrar el nombre
           divContainer.appendChild(bossDiv);
         }
       });
 
-      // Ajustar el tamaño de todas las cartas al mismo tamaño
       const allBossDivs = document.querySelectorAll('.charactere');
       let maxHeight = 0;
 
@@ -77,7 +72,6 @@ async function getBosses() {
 
  
   function openModal(boss) {
-    // Crear el contenido de la ventana modal con estadísticas y gráfico radar
     const modalContent = `
       <div class="modal-dialog modal-dialog-centered modal-md"> <!-- Cambiado a modal-md -->
         <div class="modal-content">
@@ -101,23 +95,16 @@ async function getBosses() {
       </div>
     `;
   
-    // Crear la ventana modal
     const modal = document.createElement('div');
     modal.classList.add('modal', 'fade');
     modal.innerHTML = modalContent;
   
-    // Agregar la ventana modal al cuerpo del documento
     document.body.appendChild(modal);
   
-    // Mostrar la ventana modal
     $(modal).modal('show');
   
-    // Eliminar la ventana modal del DOM después de cerrarla
     $(modal).on('hidden.bs.modal', function () {
       document.body.removeChild(modal);
     });
   
   }
-  
-
-  
