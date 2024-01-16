@@ -42,7 +42,6 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="#">Personajes<span class="sr-only">(current)</span></a>
                         </li>
-
                     </ul>
                 </div>
             </nav>
@@ -54,21 +53,22 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content gap-3">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-geo-fill"></i> Personaje</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel"> Personaje</h1>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="bi bi-x-lg"></i></span>
+                        <span aria-hidden="true">x</span>
                     </button>
                 </div>
                 <div class="modal-body d-md-flex d-sm-grid gap-3">
-                    <img class="imgReg" id="imgVer"
-                        src="https://eldenring.fanapis.com/images/locations/17f69886115l0i2m7307w4njyfhwt5.png">
+                    <img class="imgReg w-50" id="imgVer"
+                        src="https://eldenring.fanapis.com/images/npcs/17f69b266a8l0i2okbqoh1wxlp59l.png">
                     <div class="d-flex ml-2" style="height: auto;">
                         <div class="barraModal rounded rounded-4"></div>
                     </div>
                     <div class="ml-sm-3 modalp2">
-                        <h3 id="nomLoc">Personaje</h3>
-                        <p><span class="font-weight-bold"> Región: </span><span id="regLoc"></span></p>
-                        <p id="desLoc">Quote</p>
+                        <h3 id="nomPer">Personaje</h3>
+                        <p><span class="font-weight-bold"> Location: </span><span id="locPer"></span></p>
+                        <p><span class="font-weight-bold"> Rol: </span><span id="rolPer"></span></p>
+                        <p id="quotePer">Quote</p>
                     </div>
                 </div>
             </div>
@@ -78,7 +78,7 @@
 
 
 
-    <main class="row contenido-mostrar" id="localizacionesLista">
+    <main class="row contenido-mostrar" id="personajesLista">
 
 
     </main>

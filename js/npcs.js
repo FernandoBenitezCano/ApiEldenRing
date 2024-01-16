@@ -1,11 +1,12 @@
-let APIurl = "https://eldenring.fanapis.com/api/locations?limit=100";
+let APIurl = "https://eldenring.fanapis.com/api/npcs?limit=100";
 let json;
-let localizacionesWeb = document.getElementById("localizacionesLista");
+let personajesLista = document.getElementById("personajesLista");
 
 let imgVer=document.getElementById("imgVer");
-let nomLoc=document.getElementById("nomLoc");
-let regLoc=document.getElementById("regLoc");
-let desLoc=document.getElementById("desLoc");
+let nomPer=document.getElementById("nomPer");
+let locPer=document.getElementById("locPer");
+let rolPer=document.getElementById("rolPer");
+let quotePer=document.getElementById("quotePer");
 
 const Get = async (API) => {
     let result = await fetch(API)
@@ -13,11 +14,11 @@ const Get = async (API) => {
     return data;
 }
 
-async function getLocalizaciones() {
+async function getPersonajes() {
     json = await Get(APIurl);
 
     for (let index = 0; index < json.count; index++) {
-        if (json.data[index].name!=="Bellum Highway" && json.data[index].name!=="Deep Ainsel Well") {
+        if (json.data[index].image) {
             //Carta Bootstrap
             let carta = document.createElement("div");
             carta.id = json.data[index].id;
@@ -48,20 +49,20 @@ async function getLocalizaciones() {
                 llenarModal(index);
             });
 
-            localizacionesWeb.appendChild(carta);
+            personajesLista.appendChild(carta);
         };
 
-        const LocationsDivs = document.querySelectorAll('.charactere');
+        const personajesDivs = document.querySelectorAll('.charactere');
         let maxHeight = 0;
 
-        LocationsDivs.forEach(div => {
+        personajesDivs.forEach(div => {
             const divHeight = div.offsetHeight;
             if (divHeight > maxHeight) {
                 maxHeight = divHeight;
             }
         });
 
-        LocationsDivs.forEach(div => {
+        personajesDivs.forEach(div => {
             div.style.height = `${maxHeight}px`;
         });
     }
@@ -69,9 +70,15 @@ async function getLocalizaciones() {
 
 function llenarModal(index){
     imgVer.src=json.data[index].image;
-    nomLoc.innerText=json.data[index].name;
-    regLoc.innerText=json.data[index].region;
-    desLoc.innerText=json.data[index].description;
+    nomPer.innerText=json.data[index].name;
+    locPer.innerText=json.data[index].location;
+    rolPer.innerText=json.data[index].role;
+    if(json.data[index].quote!=null){
+        quotePer.innerText=`${json.data[index].quote}`;
+    }else{
+        quotePer.innerText=`No tiene cita`;
+    }
+    
 }
 
-getLocalizaciones();
+getPersonajes();
