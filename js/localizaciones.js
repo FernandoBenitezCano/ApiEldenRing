@@ -10,14 +10,14 @@ async function getLocations() {
 
       const divContainer = document.querySelector('main');
       const seenNames = new Set();
-      let isFirstAlectoAdded = false;
+      let deleteCard = false;
 
       locationsData.data.forEach(location => {
         if (location.image && !seenNames.has(location.name)) {
           seenNames.add(location.name);
 
-          if (!isFirstAlectoAdded && location.name === 'Alecto, Black Knife Ringleader') {
-            isFirstAlectoAdded = true;
+          if (location.name === 'Bellum Highway') {
+            deleteCard = true;
             return;
           }
 

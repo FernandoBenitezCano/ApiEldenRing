@@ -10,18 +10,12 @@ async function getBosses() {
 
     const divContainer = document.querySelector('main');
     const seenNames = new Set();
-    let isFirstAlectoAdded = false;
 
     if (response.ok) {
       bossesData.data.forEach(boss => {
         // Verificar si el boss tiene una imagen y no tiene el mismo nombre antes de crear la carta
         if (boss.image && !seenNames.has(boss.name)) {
           seenNames.add(boss.name);
-
-          if (!isFirstAlectoAdded && boss.name === 'Alecto, Black Knife Ringleader') {
-            isFirstAlectoAdded = true;
-            return; // Saltar la primera aparición de Alecto
-          }
 
           let bossDiv = document.createElement('div');
           bossDiv.classList.add('col-12', 'col-sm-6', 'col-md-4', 'col-lg-3', 'col-xl-2',
